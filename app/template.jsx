@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 import useScrollProgress from '@/hooks/useScrollProgress'
 // variants 
 const variants = {
-    hidden: { opacity: 1 },
-    enter: { opacity: 0 }
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 }
 }
 
 const Template = ({ children }) => {
