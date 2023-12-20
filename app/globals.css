@@ -70,3 +70,7 @@
 .subtitle {
   @apply text-muted-foreground text-lg mb-8 font-light;
 }
+
+.badge  {
+  @apply z-10 w-[200px] h-[68px] bg-white dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-4 ;
+}
