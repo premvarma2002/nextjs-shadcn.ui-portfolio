@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import './globals.css'
 
 // components
@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
 
-const inter = Inter({ subsets: ['latin'] })
+const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={outfit.className}>
         <ThemeProvider attribute="class" defaultTheme='light'>
         <Header/>
         {children}
