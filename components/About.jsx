@@ -99,16 +99,16 @@ const skillData = [
     title: "skills",
     data: [
       {
-        name: "HTML , CSS, JavaScript , React with Redux,Redux Toolkit , Next , Typescript ,Tailwind , Sass Css , Material UI , Bootstrap, and others",
+        name: "HTML , CSS, JavaScript ",
       },
       {
-        name: "Frontend Development",
+        name: "React , Next , Bootstrap",
       },
       {
-        name: "JavaScript, Typescript ,Tailwind , Sass CSS ",
+        name: "Typescript ,Tailwind , Sass CSS ",
       },
       {
-        name: "React with Redux,Redux Toolkit , Next ,Material UI , Bootstrap, and others ",
+        name: "Redux, MUI , shadcn-UI, Prisma ",
       },
     ],
   },
@@ -122,14 +122,15 @@ const skillData = [
         imgPath: "/about/Figma.svg",
       },
       {
-        imgPath: "/about/github.svg",
+        imgPath: "/about/Notion.svg",
       },
       {
-        imgPath: "/about/terminal.svg",
+        imgPath: "/about/docker.svg",
       },
       {
-        imgPath: "/about/redux.svg",
+        imgPath: "/about/firebase.svg",
       },
+     
     ],
   },
 ];
@@ -277,9 +278,10 @@ const About = () => {
                 </TabsContent>
                 <TabsContent value="skills">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-8">Tools I Use Everyday</h3>
+                    <h3 className="h3 mb-8">What I Use Everyday</h3>
+                    {/* skills  */}
                     <div className="mb-16">
-                      <h4 className="text-xl font-semibold mb-2">Skills</h4>
+                      <h4 className="text-xl font-semibold mb-2">Skills (Frontend Development)</h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* Skill List  */}
                       <div>
@@ -291,6 +293,22 @@ const About = () => {
                              </div>
                           );
                         }) }
+                      </div>
+                    </div>
+                    {/* tools  */}
+                    <div>
+                      <h4 className="text-xl font-semibold mb-2 xl:text-left">Tools</h4>
+                      <div className="border-b border-border mb-4"></div>
+                      {/* tool list  */}
+                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                       {getData(skillData, 'tools').data.map((item , index)=> {
+                        const {imgPath} = item;
+                        return (
+                          <div key={index}> 
+                            <Image src={imgPath} width={48} height={48} alt="" priority/>
+                          </div>
+                        )
+                       })}
                       </div>
                     </div>
                   </div>
