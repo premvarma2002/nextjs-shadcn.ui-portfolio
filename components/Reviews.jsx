@@ -94,7 +94,7 @@ const Reviews = () => {
                       />
                       {/* name  */}
                       <div className="flex flex-col">
-                        <CardTitle className='pt-1'>{person.name}</CardTitle>
+                        <CardTitle className="pt-1">{person.name}</CardTitle>
                         <p>{person.job}</p>
                       </div>
                     </div>
