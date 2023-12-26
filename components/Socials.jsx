@@ -14,23 +14,23 @@ import Link from "next/link";
 
 const icons = [
   {
-    path: "/https://www.instagram.com/premvarma.dev",
+    path: "https://www.instagram.com/premvarma.dev",
     name: <RiInstagramFill />,
   },
   {
-    path: "/https://github.com/premvarma2002",
+    path: "https://github.com/premvarma2002",
     name: <RiGithubFill />,
   },
   {
-    path: "/https://twitter.com/realpremvarma",
+    path: "https://twitter.com/realpremvarma",
     name: <RiTwitterXFill />,
   },
   {
-    path: "/https://www.youtube.com/channel/UCRRKb78GweCVgbb-7aqM7Zg",
+    path: "https://www.youtube.com/channel/UCRRKb78GweCVgbb-7aqM7Zg",
     name: <RiYoutubeFill />,
   },
   {
-    path: "/https://www.linkedin.com/in/premvarma2002",
+    path: "https://www.linkedin.com/in/premvarma2002",
     name: <RiLinkedinFill />,
   },
 ];
