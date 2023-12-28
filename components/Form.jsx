@@ -1,24 +1,14 @@
 'use client'
 
-import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { User, MailIcon, ArrowRightIcon, MessageSquare } from 'lucide-react';
-import GoogleCaptchaWrapper from "@/app/GoogleCaptchaWrapper";
 const Form = () => {
-  const [verified, setVerified] = useState(false);
- 
-  //recaptcha function
-  function onChange(value) {
-    console.log("Captcha value:", value);
-    // You can set the verification state here if needed
-    setVerified(true);
-  }
+
 
   return (
-    <GoogleCaptchaWrapper>
+
     <form className="flex flex-col gap-y-4" action="https://getform.io/f/73e2e40a-f072-452a-b315-080c295cb940" method="POST">
       {/* input  */}
       <div className="relative flex items-center">
@@ -35,15 +25,10 @@ const Form = () => {
         <Textarea id='message' name='message' placeholder='Type your message here.'/>
         <MessageSquare className="absolute top-4 right-6" size={20}/>
       </div>
-      <ReCAPTCHA
-        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-        onChange={onChange}
-      />
-      <Button type="submit" className='flex items-center gap-x-1 max-w-[166px]' disabled={!verified}>
+      <Button type="submit" className='flex items-center gap-x-1 max-w-[166px]' >
         Let's Talk <ArrowRightIcon size={20}/>
       </Button>
     </form>
-    </GoogleCaptchaWrapper>
   );
 };
 
