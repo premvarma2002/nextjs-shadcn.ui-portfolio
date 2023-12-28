@@ -4,6 +4,7 @@ import Form from "@/components/Form";
 const Contact = () => {
   return (
     <section>
+      
       <div className="container mx-auto">
         {/* Text & Illustration */}
         <div className="grid xl:grid-cols-2 pt-12 xl:h-[480px] mb-6 xl:mb-24">
@@ -48,6 +49,7 @@ const Contact = () => {
           <Form />
         </div>
       </div>
+      
     </section>
   );
 };

@@ -9,12 +9,14 @@ import Cta from "@/components/Cta";
 export default function Home() {
   return (
     <main>
+       
       <Hero />
       <About />
       <Services />
       <Work />
       <Reviews />
       <Cta />
+      
     </main>
   );
 }
