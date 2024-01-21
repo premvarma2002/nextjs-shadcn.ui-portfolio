@@ -27,14 +27,14 @@ const reviewsData = [
     name: " Utkarsh Gayakwad",
     job: "Entrepreneur",
     review:
-      "Prem brings a wealth of knowledge to projects. As a web developer, their versatility ensures a holistic approach, from frontend design to backend implementation.",
+      "Prem brings a wealth of knowledge to projects. their versatility ensures a holistic approach, his frontend design is outstanding.",
   },
   {
     avatar: "/reviews/avatar-5.png",
     name: "Labhansh Satpute",
     job: "Backend Engineer",
     review:
-      "He's frontend wizardry is impressive! Their React skills shine in creating seamless and responsive interfaces, making them a standout in web development.",
+      "His frontend skill is impressive! Their React skills shine in creating seamless and responsive design, make him standout in web development.",
   },
   {
     avatar: "/reviews/avatar-4.png",

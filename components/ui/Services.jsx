@@ -12,19 +12,19 @@ const servicesData = [
     icon: <Wand2 size={72} strokeWidth={0.8} />,
     title: "Web Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, iusto assumenda. . ",
+      "I create beautiful and functional web designs for your brand and vision ",
   },
   {
     icon: <MonitorSmartphone size={72} strokeWidth={0.8} />,
     title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, iusto assumenda. . ",
+      "I build fast and secure web applications, using the latest tools and technologies. ",
   },
   {
     icon: <Smartphone className="  " size={72} strokeWidth={0.8} />,
     title: "App Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, iusto assumenda. . ",
+      "I develop high-quality native and cross-platform apps for iOS and Android, using the best practices and frameworks.",
   },
 ];
 

@@ -55,14 +55,14 @@ const qualificationData = [
       },
       {
         university: "Guru nanak College of Science",
-        qualification: "Bachelor of Science",
+        qualification: "B.SC Computer Science",
         years: "2020 - 2023",
       },
-      {
-        university: "LPU University",
-        qualification: "Master of Computer Applications",
-        years: "2024 - Present",
-      },
+      // {
+      //   university: "LPU University",
+      //   qualification: "Master of Computer Applications",
+      //   years: "2024 - Present",
+      // },
       // {
       //     university: 'IIT Patna',
       //     qualification: 'M.Tech in Cloud Computing',

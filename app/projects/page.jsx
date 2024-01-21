@@ -7,20 +7,20 @@ const projectData = [
   {
     image: "/work/3.png",
     category: "react js",
-    name: "Nexa Website",
+    name: "Amazon clone",
     description:
-      "Lorem ipsum, dolor sit amet consectetur a necessitatibus eveniet est tenetur quisquam dolore",
-    link: "/",
-    github: "/",
+      "Amazon Clone made with react , tailwind, javascript and redux",
+    link: "https://amazon-clone-ten-lemon.vercel.app/",
+    github: "https://github.com/premvarma2002/amazon-clone",
   },
   {
     image: "/work/1.png",
-    category: "next js",
-    name: "Solestice Website",
+    category: "react js",
+    name: "Homeland ",
     description:
-      "Lorem ipsum, dolor sit amet consectetur a necessitatibus eveniet est tenetur quisquam dolore",
-    link: "/",
-    github: "/",
+      "A real estate rental website made with react, tailwind & javascript.",
+    link: "https://beautiful-homeland.netlify.app/",
+    github: "https://github.com/premvarma2002/Real-Estate",
   },
   {
     image: "/work/2.png",
@@ -51,7 +51,7 @@ const projectData = [
   },
   {
     image: "/work/4.png",
-    category: "react js",
+    category: "next js",
     name: "Envision Website",
     description:
       "Lorem ipsum, dolor sit amet consectetur a necessitatibus eveniet est tenetur quisquam dolore",
@@ -60,7 +60,7 @@ const projectData = [
   },
   {
     image: "/work/4.png",
-    category: "react js",
+    category: "next js",
     name: "Envision Website",
     description:
       "Lorem ipsum, dolor sit amet consectetur a necessitatibus eveniet est tenetur quisquam dolore",
