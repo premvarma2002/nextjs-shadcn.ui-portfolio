@@ -16,25 +16,25 @@ import { Pagination } from "swiper/modules";
 
 const reviewsData = [
   {
-    avatar: "/reviews/avatar-1.png",
-    name: " Richard Thompson",
-    job: "chef",
+    avatar: "/reviews/avatar-2.png",
+    name: " Gaurav Nagoge",
+    job: "Python Developer",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, molestiae! Expedita, numquam quos!",
+    "He elevated our project with stellar React development. Their attention to detail and commitment to quality set them apart.",
   },
   {
-    avatar: "/reviews/avatar-2.png",
-    name: " Mason Wilson",
-    job: "Video Editor",
+    avatar: "/reviews/avatar-1.png",
+    name: " Utkarsh Gayakwad",
+    job: "Entrepreneur",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, molestiae! Expedita, numquam quos!",
+      "Prem brings a wealth of knowledge to projects. As a web developer, their versatility ensures a holistic approach, from frontend design to backend implementation.",
   },
   {
     avatar: "/reviews/avatar-5.png",
-    name: " Oliver Taylor",
-    job: "Engineer",
+    name: "Labhansh Satpute",
+    job: "Backend Engineer",
     review:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, molestiae! Expedita, numquam quos!",
+      "He's frontend wizardry is impressive! Their React skills shine in creating seamless and responsive interfaces, making them a standout in web development.",
   },
   {
     avatar: "/reviews/avatar-4.png",
