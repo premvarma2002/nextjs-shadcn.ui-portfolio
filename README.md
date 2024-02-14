@@ -1,10 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Screenshots
+
+```bash![Screenshot (401)](https://github.com/premvarma2002/nextjs-shadcn.ui-portfolio/assets/98645019/1571bea5-6c2f-4419-96c2-a65e56018e90)
+![image](https://github.com/premvarma2002/nextjs-shadcn.ui-portfolio/assets/98645019/81b88543-b926-4a84-a152-43077362b634)
+
+
 ## Getting Started
 
 First, run the development server:
 
-```bash
+
 npm run dev
 # or
 yarn dev
