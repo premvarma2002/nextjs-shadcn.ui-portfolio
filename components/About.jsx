@@ -1,6 +1,8 @@
 import DevImg from "./DevImg";
 import Image from "next/image";
+import { skills } from "@/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import {Button, Tooltip } from '@nextui-org/react';
 
 import {
   User2,
@@ -283,54 +285,33 @@ const About = () => {
                 </TabsContent>
                 <TabsContent value="skills">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-8">What I Use Everyday</h3>
+                    <h3 className="h3 mb-7">What I Use Everyday</h3>
                     {/* skills  */}
                     <div className="mb-16">
-                      <h4 className="text-xl font-semibold mb-2">
-                        Skills (Frontend Development)
-                      </h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* Skill List  */}
-                      <div>
-                        {getData(skillData, "skills").data.map(
-                          (item, index) => {
-                            const { name } = item;
-                            return (
-                              <div
-                                className="w-2/4 text-corner xl:text-left mx-auto xl:mx-0"
-                                key={index}
-                              >
-                                <div className="font-medium">{name}</div>
-                              </div>
-                            );
-                          }
-                        )}
-                      </div>
+                      <div className="mt-10 flex flex-wrap sm:gap-12 gap-4 justify-center items-center">
+
+                      {skills.map((skills) => (
+                        <div className="block-container w-20 h-20" key={skills.name}>
+                            <div className="rounded-xl "/>
+                            <Tooltip content={skills.name}  className='border border-primary bg-transparent text-primary rounded-md'>
+                                <Button className="border backdrop-blur-2xl dark:bg-zinc-800/10 dark:border-neutral-800/60 rounded-xl flex justify-center items-center h-20 w-20" >
+                                    <Image 
+                                        src={skills.imageUrl}
+                                        alt={skills.name} 
+                                        // className="w-1/2 h-1/2 object-contain"
+                                        className="w-16 h-16 object-contain"
+                                        />
+                                </Button>
+                            </Tooltip>
+                           
+                        </div>
+                       
+                    ))}
                     </div>
-                    {/* tools  */}
-                    <div>
-                      <h4 className="text-xl font-semibold mb-2 xl:text-left">
-                        Tools
-                      </h4>
-                      <div className="border-b border-border mb-4"></div>
-                      {/* tool list  */}
-                      <div className="flex gap-x-8 justify-center xl:justify-start">
-                        {getData(skillData, "tools").data.map((item, index) => {
-                          const { imgPath } = item;
-                          return (
-                            <div key={index}>
-                              <Image
-                                src={imgPath}
-                                width={48}
-                                height={48}
-                                alt=""
-                                priority
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
                     </div>
+                    
                   </div>
                 </TabsContent>
               </div>
