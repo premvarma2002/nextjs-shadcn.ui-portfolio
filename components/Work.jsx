@@ -39,7 +39,7 @@ const projectData = [
     category: "NextJs",
     name: "LMS-Platform",
     description:
-      "A Course Selling and LMS Platform built with Nextjs, Tailwind CSS, TypeScript, Prisma, Neon and PostgreSQL.",
+      "A Course Selling and LMS Platform built with Nextjs, Tailwind CSS, TypeScript, Prisma and PostgreSQL.",
     link: "/https://lms-platform-liard.vercel.app/",
     github: "/https://github.com/premvarma2002/lms-platform",
   },
