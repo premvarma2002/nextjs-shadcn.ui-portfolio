@@ -9,7 +9,6 @@ import Cta from "@/components/Cta";
 export default function Home() {
   return (
     <main>
-      <meta name="google-site-verification" content="TSdYz7pHZrOEUT_0Qqqi0YK80up-d2kmWX-lNp4yPtM" />
       <Hero />
       <About />
       <Services />
