@@ -85,7 +85,7 @@ body::-webkit-scrollbar {
 }
 
 .subtitle {
-  @apply text-muted-foreground text-lg mb-8 font-light;
+  @apply text-muted-foreground text-lg mb-8 font-light text-center xl:text-left;
 }
 
 .section-title {

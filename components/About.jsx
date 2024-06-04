@@ -174,7 +174,7 @@ const About = () => {
                     <h3 className="h3 mb-4">
                       Unmatched Service Quality for Over 2 years
                     </h3>
-                    <p className="subtitle max-w-xl max-auto xl:mx-0">
+                    <p className="subtitle max-w-[490] max-auto xl:mx-0">
                       I specialize in crafting intuitive websites with
                       cutting-edge technology, delivering dynamic and engaging
                       user experiences
