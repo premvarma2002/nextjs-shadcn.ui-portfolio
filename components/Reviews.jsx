@@ -22,13 +22,13 @@ const reviewsData = [
     review:
     "He elevated our project with stellar React development. Their attention to detail and commitment to quality set them apart.",
   },
-  {
-    avatar: "/reviews/avatar-1.png",
-    name: " Utkarsh Gayakwad",
-    job: "Entrepreneur",
-    review:
-      "Prem brings a wealth of knowledge to projects. their versatility ensures a holistic approach, his frontend design is outstanding.",
-  },
+  // {
+  //   avatar: "/reviews/avatar-1.png",
+  //   name: " Utkarsh Gayakwad",
+  //   job: "Entrepreneur",
+  //   review:
+  //     "Prem brings a wealth of knowledge to projects. their versatility ensures a holistic approach, his frontend design is outstanding.",
+  // },
   {
     avatar: "/reviews/avatar-5.png",
     name: "Labhansh Satpute",
