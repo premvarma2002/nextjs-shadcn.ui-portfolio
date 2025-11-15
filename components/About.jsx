@@ -79,7 +79,7 @@ const qualificationData = [
       {
         company: "Upwork",
         role: "Freelance Web developer",
-        years: "2022 - Present",
+        years: "2022 - 2023",
       },
 
       {
@@ -88,9 +88,9 @@ const qualificationData = [
         years: "Jul 2023 - Sep 2023 ",
       },
       {
-        company: "InternPe",
-        role: "Web Development intern",
-        years: "Apr 2023 - Jun 2023",
+        company: "Makku Enterprises Pvt Ltd",
+        role: "ReactJS Developer",
+        years: "June 2024 - Jan 2025",
       },
     ],
   },

@@ -1,58 +1,56 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
-import { Card, CardHeader } from "./ui/card";
-import { useRouter } from 'next/navigation';
-import { Github, Link2Icon } from "lucide-react";
-import { Badge } from "./ui/badge";
+import { Link2, Github } from "lucide-react";
 
 const ProjectCard = ({ project }) => {
-  const router = useRouter();
-
-  // Create onClick handler for whole card
-  // const handleCardClick = () => {
-  //   router.push(`/projectdetails/${project.id}`); // Use ID for unique routing
-  // };
-
   return (
-    <Card className="group overflow-hidden relative">
-      <CardHeader className="p-0">
-        {/* image  */}
-        <div className="relative w-full h-[300px] flex  items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_dark xl:bg-[110%] xl:bg-no-repeat">
-          <Image
-            className="absolute bottom-0 shadow-2xl"
-            src={project.image}
-            width={247}
-            height={250}
-            alt=""
-            priority
-          />
-          {/* btn links */}
-          <div className="flex gap-x-4">
-            <Link
-              target="_blank"
-              href={project.link}
-              className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200"
-            >
-              <Link2Icon className="text-white" />
-            </Link>
-            <Link
-              target="_blank"
-              href={project.github}
-              className="bg-secondary w-[54px] h-[54px] rounded-full flex justify-center items-center scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300"
-            >
-              <Github className="text-white" />
-            </Link>
-          </div>
+    <div className="group relative overflow-hidden rounded-3xl border border-black/[0.08] dark:border-white/[0.1] bg-white dark:bg-[#202030] shadow-sm hover:shadow-xl transition-all duration-500">
+      
+      {/* Image Section */}
+      <div className="relative h-60 w-full overflow-hidden rounded-t-3xl">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          sizes=""
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+
+        {/* Category Badge */}
+        <span className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 text-xs font-semibold rounded-full shadow-md">
+          {project.category.toUpperCase()}
+        </span>
+
+        {/* Hover Action Buttons */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <a
+            href={project.link}
+            target="_blank"
+            className="p-3 bg-black/70 dark:bg-white/20 text-white dark:text-white rounded-full backdrop-blur-md hover:scale-110 transition-all"
+          >
+            <Link2 size={18} />
+          </a>
+          <a
+            href={project.github}
+            target="_blank"
+            className="p-3 bg-black/70 dark:bg-white/20 text-white dark:text-white rounded-full backdrop-blur-md hover:scale-110 transition-all"
+          >
+            <Github size={18} />
+          </a>
         </div>
-      </CardHeader>
-      <div className="h-full px-8 py-6">
-        <Badge className="uppercase text-sm font-medium mb-2 absolute top-4 left-5">
-          {project.category}
-        </Badge>
-        <h4 className="h4 mb-1">{project.name}</h4>
-        <p className="text-muted-foreground text-lg">{project.description}</p>
       </div>
-    </Card>
+
+      {/* Content Section */}
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-1 group-hover:text-orange-500 transition-colors">
+          {project.name}
+        </h3>
+        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          {project.description}
+        </p>
+      </div>
+    </div>
   );
 };
 
