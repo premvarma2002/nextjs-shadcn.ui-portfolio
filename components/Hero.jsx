@@ -32,7 +32,7 @@ const Hero = () => {
                   "NEXT JS DEVELOPER"
                 ]}
                 typingSpeed={70}
-                pauseDuration={1200}
+                pauseDuration={1500}
                 showCursor={true}
               />
             </div>
@@ -45,7 +45,7 @@ const Hero = () => {
                   "I create clean and elegant UI"
                 ]}
                 typingSpeed={60}
-                pauseDuration={1500}
+                pauseDuration={1800}
                 showCursor={true}
               />
             </h1>
