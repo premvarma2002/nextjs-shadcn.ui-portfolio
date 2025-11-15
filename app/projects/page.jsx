@@ -16,31 +16,32 @@ const presetCategories = [
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState(presetCategories);
   const [selectedCategory, setSelectedCategory] = useState("all projects");
 
   useEffect(() => {
   async function loadProjects() {
-    const firebaseProjects = await fetchProjects();
-    setProjects(firebaseProjects);
+  setLoading(true); // start loader
 
-    // categories found in Firestore
-    const fetchedCategories = [
-      ...new Set(
-        firebaseProjects.map((p) => p.category?.toLowerCase())
-      ),
-    ];
+  const firebaseProjects = await fetchProjects();
+  setProjects(firebaseProjects);
 
-    // Only show preset categories that actually exist in Firestore
-    const usableCategories = [
-      "all projects",
-      ...presetCategories.filter((cat) =>
-        fetchedCategories.includes(cat.toLowerCase())
-      ),
-    ];
+  const fetchedCategories = [
+    ...new Set(firebaseProjects.map((p) => p.category?.toLowerCase())),
+  ];
 
-    setCategories(usableCategories);
-  }
+  const usableCategories = [
+    "all projects",
+    ...presetCategories.filter((cat) =>
+      fetchedCategories.includes(cat.toLowerCase())
+    ),
+  ];
+
+  setCategories(usableCategories);
+
+  setLoading(false); // done loading
+}
 
   loadProjects();
 }, []);
@@ -62,19 +63,10 @@ const Projects = () => {
 
         {/* TABS */}
         <Tabs defaultValue={selectedCategory} className="mb-24 xl:mb-48">
+          
   <TabsList
     className="
-      w-full 
-      grid 
-      md:auto-cols-fr md:grid-flow-col 
-      max-w-[700px]
-      mx-auto 
-      rounded-full 
-      border 
-      border-primary/20
-      p-1
-      bg-white 
-      dark:bg-secondary
+   w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none
     "
   >
     {categories.map((cat, index) => (
@@ -101,22 +93,31 @@ const Projects = () => {
     ))}
   </TabsList>
 
+{/* LOADER */}
+{loading && (
+  <div className="w-full flex justify-center py-20">
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+  </div>
+)}
 
-          {/* PROJECTS GRID */}
-          <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project) => (
-              <TabsContent key={project.id} value={selectedCategory}>
-                <ProjectCard project={project} />
-              </TabsContent>
-            ))}
+{/* PROJECTS GRID */}
+{!loading && (
+  <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4">
 
-            {/* If no projects exist for category */}
-            {filteredProjects.length === 0 && (
-              <div className="col-span-full text-center text-gray-500 dark:text-gray-400 py-10">
-                No projects available in this category yet.
-              </div>
-            )}
-          </div>
+    {filteredProjects.map((project) => (
+      <TabsContent key={project.id} value={selectedCategory} className="mb-4">
+        <ProjectCard project={project} />
+      </TabsContent>
+    ))}
+
+    {filteredProjects.length === 0 && (
+      <div className="col-span-full text-center text-gray-500 dark:text-gray-400 py-10">
+        No projects available in this category yet.
+      </div>
+    )}
+
+  </div>
+)}
         </Tabs>
       </div>
     </section>
