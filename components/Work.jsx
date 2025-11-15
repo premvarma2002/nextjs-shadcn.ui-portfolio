@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import ProjectCard from "./ProjectCard";
 import { fetchProjects } from "@/lib/getProjects";
@@ -40,25 +40,30 @@ const Work = () => {
 
         {/* slider */}
         <div className="xl:max-w-[1000px] xl:absolute right-0 top-0">
-          <Swiper
-            className="h-[480px]"
-            slidesPerView={1}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-            }}
-            spaceBetween={30}
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-          >
-
-            {/* Only first 4 projects */}
-            {projects.slice(0, 4).map((project) => (
-              <SwiperSlide key={project.id}>
-                <ProjectCard project={project} />
-              </SwiperSlide>
-            ))}
-
-          </Swiper>
+<Swiper
+  loop={true}
+  className="h-[480px]"
+  slidesPerView={1}
+  breakpoints={{
+    640: { slidesPerView: 2 }
+  }}
+  spaceBetween={30}
+  modules={[Pagination, Autoplay]}
+  pagination={{
+    clickable: true
+  }}
+  autoplay={{
+    delay: 2500, 
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,       // optional: stops autoplay on hover
+  }}
+>
+  {projects.slice(0, 4).map((project) => (
+    <SwiperSlide key={project.id}>
+      <ProjectCard project={project} />
+    </SwiperSlide>
+  ))}
+</Swiper>
         </div>
 
       </div>

@@ -90,7 +90,7 @@ const qualificationData = [
       {
         company: "Makku Enterprises Pvt Ltd",
         role: "ReactJS Developer",
-        years: "June 2024 - Jan 2025",
+        years: "June 2024 - May 2025",
       },
     ],
   },

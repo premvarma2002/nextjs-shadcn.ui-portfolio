@@ -7,12 +7,13 @@ import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 // import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+
 // import swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 const reviewsData = [
   {
@@ -65,19 +66,24 @@ const Reviews = () => {
       <div className="container mx-auto">
         <h2 className="section-title mb-12 text-center mx-auto">Reviews</h2>
         {/* slider  */}
-        <Swiper
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1400: { slidesPerView: 3 },
-          }}
-          spaceBetween={30}
-          modules={[Pagination]}
-          pagination={{
-            clickable: true,
-          }}
-          className="h-[350px]"
-        >
+       <Swiper
+  loop={true}
+  slidesPerView={1}
+  breakpoints={{
+    640: { slidesPerView: 2 },
+    1400: { slidesPerView: 3 },
+  }}
+  spaceBetween={30}
+  modules={[Pagination, Autoplay]}
+  pagination={{ clickable: true }}
+
+  autoplay={{
+    delay: 2500,     // 2.5 sec per slide
+    disableOnInteraction: false,  // keeps autoplay after user swipes
+  }}
+
+  className="h-[350px]"
+>
           {reviewsData.map((person, index) => {
             return (
               <SwiperSlide key={index}>

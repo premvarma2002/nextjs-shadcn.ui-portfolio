@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Download, Send } from "lucide-react";
+import TextType from "./TextType";
 
 import {
   RiBriefcase4Fill,
@@ -16,20 +17,45 @@ import Socials from "./Socials";
 
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
+   <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
-          {/* text  */}
+
+          {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
-            <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
-              Frontend Developer
+
+            <div className="text-lg uppercase font-semibold mb-4 text-primary tracking-[4px]">
+              <TextType 
+                text={[
+                  "FRONTEND DEVELOPER",
+                  "REACT JS DEVELOPER",
+                  "NEXT JS DEVELOPER"
+                ]}
+                typingSpeed={70}
+                pauseDuration={1200}
+                showCursor={true}
+              />
             </div>
-            <h1 className="h1 mb-4">Hello , my name is Prem Varma</h1>
+
+            <h1 className="h1 mb-4">
+              <TextType 
+                text={[
+                  "Hello, my name is Prem Varma",
+                  "I build modern web applications",
+                  "I create clean and elegant UI"
+                ]}
+                typingSpeed={60}
+                pauseDuration={1500}
+                showCursor={true}
+              />
+            </h1>
+
             <p className="subtitle max-w-[490] mx-auto xl:mx-0">
               Brief description with insights into myself, my vocational
               journey, and what I engage in professionally.
             </p>
-            {/* buttons  */}
+
+            {/* buttons */}
             <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
               <Link href={"/contact"}>
                 <Button className="gap-x-2">
@@ -43,7 +69,7 @@ const Hero = () => {
                 </Button>
               </a>
             </div>
-            {/* socials  */}
+
             <Socials
               containerStyles="flex gap-x-6 m-auto xl:mx-0"
               iconsStyles="text-foreground text-[22px] hover:text-primary transition-all"
