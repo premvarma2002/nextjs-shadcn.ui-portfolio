@@ -31,23 +31,14 @@ const Hero = () => {
                   "REACT JS DEVELOPER",
                   "NEXT JS DEVELOPER"
                 ]}
-                typingSpeed={70}
-                pauseDuration={1500}
+                typingSpeed={60}
+                pauseDuration={2200}
                 showCursor={true}
               />
             </div>
 
             <h1 className="h1 mb-4">
-              <TextType 
-                text={[
-                  "Hello, my name is Prem Varma",
-                  "I build modern web applications",
-                  "I create clean and elegant UI"
-                ]}
-                typingSpeed={60}
-                pauseDuration={1800}
-                showCursor={true}
-              />
+                  Hello, my name is Prem Varma
             </h1>
 
             <p className="subtitle max-w-[490] mx-auto xl:mx-0">

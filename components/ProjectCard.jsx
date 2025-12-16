@@ -3,20 +3,57 @@
 import Image from "next/image";
 import { Link2, Github } from "lucide-react";
 
+import { BsBootstrapFill } from "react-icons/bs";
+
+import {
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFirebase,
+  SiJavascript,
+  SiTypescript,
+  SiRedux,
+  SiPrisma,
+  SiPostgresql,
+} from "react-icons/si";
+import { html } from "@/assets/icons";
+
+const techIconMap = {
+  react: SiReact,
+  nextjs: SiNextdotjs,
+  tailwind: SiTailwindcss,
+  firebase: SiFirebase,
+  javascript: SiJavascript,
+  typescript: SiTypescript,
+  redux: SiRedux,
+  prisma: SiPrisma,
+  postgresql: SiPostgresql,
+  html: SiHtml5,
+  css: SiCss3,
+  bootstrap: BsBootstrapFill
+,
+
+};
+
+// project.teckstack should be like
+// ["react", "tailwind", "javascript"] array of strings
+
 const ProjectCard = ({ project }) => {
   return (
-    <div className="
+    <div
+      className="
       group relative overflow-hidden rounded-3xl
       border border-black/[0.08] dark:border-white/[0.1]
       bg-white dark:bg-[#202030]
       shadow-[0_4px_16px_rgba(0,0,0,0.07)]
       hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)]
       transition-all duration-500
-    ">
-      
+    "
+    >
       {/* Image */}
       <div className="relative h-60 w-full overflow-hidden rounded-t-3xl">
-
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
 
@@ -29,22 +66,26 @@ const ProjectCard = ({ project }) => {
         />
 
         {/* Category Badge */}
-        <span className="
+        <span
+          className="
           absolute top-4 left-4 
           bg-orange-500 text-white 
           px-3 py-1 text-[11px] tracking-wide font-semibold 
           rounded-full shadow-md shadow-orange-300/40
-        ">
+        "
+        >
           {project.category.toUpperCase()}
         </span>
 
         {/* Hover Action Buttons */}
-        <div className="
+        <div
+          className="
           absolute bottom-4 left-1/2 -translate-x-1/2
           flex items-center gap-4
           opacity-0 group-hover:opacity-100
           transition-all duration-500
-        ">
+        "
+        >
           <a
             href={project.link}
             target="_blank"
@@ -76,6 +117,31 @@ const ProjectCard = ({ project }) => {
         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
           {project.description}
         </p>
+        {/* Tech Stack */}
+        <div className="flex items-center gap-3 flex-wrap mt-2">
+          {project.techStack?.map((tech) => {
+            const Icon = techIconMap[tech];
+            if (!Icon) return null;
+
+            return (
+              <div
+                key={tech}
+                title={tech}
+                className="
+          flex items-center justify-center
+          w-9 h-9
+          rounded-lg
+          bg-gray-100 dark:bg-white/10
+          text-gray-700 dark:text-gray-300
+          hover:bg-orange-100 dark:hover:bg-white/20
+          transition-all
+        "
+              >
+                <Icon className="w-4 h-4" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
