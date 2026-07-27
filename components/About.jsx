@@ -1,8 +1,11 @@
+"use client";
+
 import DevImg from "./DevImg";
 import Image from "next/image";
 import { skills } from "@/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import {Button, Tooltip } from '@nextui-org/react';
+import { motion } from "framer-motion";
 
 import {
   User2,
@@ -136,7 +139,7 @@ const About = () => {
   };
   //  console.log(getData(qualificationData , 'experience'))
   return (
-    <section className="xl:h-[860px] pb-12 pt-1 xl:py-24 ">
+    <section className="xl:min-h-[860px] pb-12 pt-1 xl:py-24 ">
       <div className="container mx-auto">
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto pt-2">
           About me
@@ -292,26 +295,36 @@ const About = () => {
                       {/* Skill List  */}
                       <div className="mt-10 flex flex-wrap sm:gap-12 gap-4 justify-center items-center">
 
-                      {skills.map((skills) => (
-                        <div className="block-container w-20 h-20" key={skills.name}>
-                            <div className="rounded-xl "/>
-                            <Tooltip content={skills.name}  className='border border-primary bg-transparent text-primary rounded-md'>
-                                <Button className="border backdrop-blur-2xl dark:bg-zinc-800/10 dark:border-neutral-800/60 rounded-xl flex justify-center items-center h-20 w-20" >
+                      {skills.map((skill, index) => (
+                        <motion.div 
+                            className="w-20 h-20 relative" 
+                            key={skill.name}
+                            initial={{ opacity: 0, scale: 0.8, y: 15 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.3, delay: index * 0.03 }}
+                            whileHover={{ scale: 1.15, rotate: 3, y: -5 }}
+                        >
+                            <Tooltip 
+                                content={skill.name}
+                                delay={0}
+                                closeDelay={0}
+                                className='border border-primary/20 bg-background text-foreground shadow-lg px-3 py-1.5 rounded-xl text-xs font-semibold'
+                            >
+                                <Button className="border bg-white/40 dark:bg-zinc-800/10 backdrop-blur-md border-neutral-200/50 dark:border-neutral-800/60 rounded-2xl flex justify-center items-center h-20 w-20 shadow-sm hover:shadow-primary/10 hover:border-primary/50 transition-all duration-300" >
                                     <Image 
-                                        src={skills.imageUrl}
-                                        alt={skills.name} 
-                                        // className="w-1/2 h-1/2 object-contain"
-                                        className="w-16 h-16 object-contain"
+                                        src={skill.imageUrl}
+                                        alt={skill.name} 
+                                        className="w-12 h-12 object-contain filter dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.15)]"
+                                        width={48}
+                                        height={48}
                                         />
                                 </Button>
                             </Tooltip>
-                           
-                        </div>
-                       
-                    ))}
+                        </motion.div>
+                      ))}
+                      </div>
                     </div>
-                    </div>
-                    
                   </div>
                 </TabsContent>
               </div>

@@ -29,6 +29,12 @@ import graphQL from './graphQL.svg'
 import threejs from './threejs.svg'
 import docker from './docker.svg'
 import redis from './redis.svg'
+import angular from './angular.svg'
+import reactnative from './reactnative.svg'
+import bitbucket from './bitbucket.svg'
+import coderabbit from './coderabbit.svg'
+import googlesearchconsole from './googlesearchconsole.svg'
+import antigravity from './antigravity.svg'
 
 export {
     css,
@@ -61,7 +67,11 @@ export {
     soundon,
     soundoff,
     docker,
-    redis
-    
-
+    redis,
+    angular,
+    reactnative,
+    bitbucket,
+    coderabbit,
+    googlesearchconsole,
+    antigravity
 }

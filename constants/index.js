@@ -14,6 +14,12 @@ import {
     docker,
     redis,
     graphQL,
+    angular,
+    reactnative,
+    bitbucket,
+    coderabbit,
+    googlesearchconsole,
+    antigravity,
 } from "@/assets/icons/index";
 
 
@@ -44,8 +50,18 @@ export const skills = [
         type: "Frontend",
     },
     {
+        imageUrl: reactnative,
+        name: "React Native",
+        type: "Frontend",
+    },
+    {
         imageUrl: nextjs,
         name: "Next.js",
+        type: "Frontend",
+    },
+    {
+        imageUrl: angular,
+        name: "Angular",
         type: "Frontend",
     },
     {
@@ -63,7 +79,11 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
-
+    {
+        imageUrl: bitbucket,
+        name: "Bitbucket CI/CD",
+        type: "DevOps",
+    },
     {
         imageUrl: motion,
         name: "Motion",
@@ -94,6 +114,21 @@ export const skills = [
         imageUrl: graphQL,
         name: "graphQL",
         type: "Bundler",
+    },
+    {
+        imageUrl: coderabbit,
+        name: "CodeRabbit AI",
+        type: "AI Code Review",
+    },
+    {
+        imageUrl: antigravity,
+        name: "Antigravity IDE",
+        type: "Development Tools",
+    },
+    {
+        imageUrl: googlesearchconsole,
+        name: "SEO Optimization",
+        type: "SEO & Performance",
     },
 ];
 

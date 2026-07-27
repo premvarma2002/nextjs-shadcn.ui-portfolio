@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="antigravity-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="10" stroke="url(#antigravity-grad)" stroke-width="1.5" stroke-dasharray="3 3" />
+  <path d="M12 5L16 11H8L12 5Z" fill="url(#antigravity-grad)" />
+  <path d="M12 19L8 13H16L12 19Z" fill="url(#antigravity-grad)" opacity="0.6" />
+  <circle cx="12" cy="12" r="2.5" fill="#FFFFFF" />
+</svg>

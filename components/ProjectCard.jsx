@@ -17,11 +17,14 @@ import {
   SiRedux,
   SiPrisma,
   SiPostgresql,
+  SiAngular,
 } from "react-icons/si";
 import { html } from "@/assets/icons";
 
 const techIconMap = {
   react: SiReact,
+  reactnative: SiReact,
+  angular: SiAngular,
   nextjs: SiNextdotjs,
   tailwind: SiTailwindcss,
   firebase: SiFirebase,

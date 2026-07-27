@@ -8,10 +8,10 @@ import { fetchProjects } from "@/lib/getProjects";
 const presetCategories = [
   "all projects",
   "react js",
-  "html css",
+  "react native",
   "next js",
-  // "vue js",
-  // "angular",
+  "angular",
+  "html css",
 ];
 
 const Projects = () => {
