@@ -4,6 +4,7 @@ const nextConfig = {
     unoptimized: true,
     domains: [
       "firebasestorage.googleapis.com",
+      "firebasestorage.app",
     ],
   },
 };
