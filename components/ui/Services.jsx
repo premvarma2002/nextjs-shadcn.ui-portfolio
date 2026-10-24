@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./card";
+import { Reveal, Stagger, StaggerItem, Tilt, Float } from "../animations/Motion";
 
 const servicesData = [
   {
@@ -32,32 +33,39 @@ const Services = () => {
   return (
     <section className="mb-12 xl:mb-36">
       <div className="container mx-auto">
-        <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto">
-          My Services
-        </h2>
+        <Reveal>
+          <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto">
+            My Services
+          </h2>
+        </Reveal>
         {/* grid items  */}
-        <div className="grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8">
+        <Stagger className="grid xl:grid-cols-3 justify-items-center gap-y-12 xl:gap-y-24 xl:gap-x-8">
           {servicesData.map((item, index) => {
             return (
-              <Card
-                className="w-full max-w-[424px] h-[300px] flex flex-col pt-16 pb-18 justify-center items-center relative"
-                key={index}
-              >
-                <CardHeader className="text-primary absolute -top-[60px]">
-                  <div className="w-[140px] h-[90px] bg-white dark:bg-background flex justify-center items-center">
-                    {item.icon}
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <CardTitle className="mb-4">{item.title}</CardTitle>
-                  <CardDescription className="text-lg">
-                    {item.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <StaggerItem className="w-full max-w-[424px]" key={index}>
+                <Tilt max={8}>
+                  <Card className="group w-full h-[300px] flex flex-col pt-16 pb-18 justify-center items-center relative hover:border-primary/60 hover:shadow-xl hover:shadow-primary/10 transition-[border-color,box-shadow] duration-300">
+                    <CardHeader className="text-primary absolute -top-[60px]">
+                      <Float amplitude={8} duration={4} delay={index * 0.5}>
+                        <div className="w-[140px] h-[90px] bg-white dark:bg-background flex justify-center items-center group-hover:scale-110 transition-transform duration-300">
+                          {item.icon}
+                        </div>
+                      </Float>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <CardTitle className="mb-4 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </CardTitle>
+                      <CardDescription className="text-lg">
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </Tilt>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

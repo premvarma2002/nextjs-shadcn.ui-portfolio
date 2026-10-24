@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
+import { Reveal } from "./animations/Motion";
 
 const reviewsData = [
   {
@@ -64,8 +65,11 @@ const Reviews = () => {
   return (
     <section className="mb-12 xl:mb-32">
       <div className="container mx-auto">
-        <h2 className="section-title mb-12 text-center mx-auto">Reviews</h2>
+        <Reveal>
+          <h2 className="section-title mb-12 text-center mx-auto">Reviews</h2>
+        </Reveal>
         {/* slider  */}
+       <Reveal delay={0.15}>
        <Swiper
   loop={true}
   slidesPerView={1}
@@ -87,7 +91,7 @@ const Reviews = () => {
           {reviewsData.map((person, index) => {
             return (
               <SwiperSlide key={index}>
-                <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]">
+                <Card className="bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px] hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
                   <CardHeader className="p-0 mb-10">
                     <div className="flex items-center gap-x-4">
                       {/* image  */}
@@ -113,6 +117,7 @@ const Reviews = () => {
             );
           })}
         </Swiper>
+       </Reveal>
       </div>
     </section>
   );

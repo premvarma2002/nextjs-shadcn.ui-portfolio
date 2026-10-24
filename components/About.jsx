@@ -6,6 +6,7 @@ import { skills } from "@/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import {Button, Tooltip } from '@nextui-org/react';
 import { motion } from "framer-motion";
+import { Reveal, Parallax } from "./animations/Motion";
 
 import {
   User2,
@@ -141,19 +142,23 @@ const About = () => {
   return (
     <section className="xl:min-h-[860px] pb-12 pt-1 xl:py-24 ">
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto pt-2">
-          About me
-        </h2>
+        <Reveal>
+          <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto pt-2">
+            About me
+          </h2>
+        </Reveal>
         <div className="flex flex-col xl:flex-row">
           {/* image  */}
-          <div className="hidden xl:flex flex-1 relative">
-            <DevImg
-              containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
-              imgSrc="/about/dev.png"
-            />
-          </div>
+          <Reveal direction="right" className="hidden xl:flex flex-1 relative">
+            <Parallax speed={0.25}>
+              <DevImg
+                containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
+                imgSrc="/about/dev.png"
+              />
+            </Parallax>
+          </Reveal>
           {/* tabs  */}
-          <div className="flex-1">
+          <Reveal direction="left" delay={0.15} className="flex-1">
             <Tabs defaultValue="personal">
               <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
                 <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
@@ -186,13 +191,18 @@ const About = () => {
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
                       {infoData.map((item, index) => {
                         return (
-                          <div
-                            className="flex items-center gap-x-4 mx-auto xl:mx-0"
+                          <motion.div
+                            className="flex items-center gap-x-4 mx-auto xl:mx-0 group"
                             key={index}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.07 }}
                           >
-                            <div className="text-primary ">{item.icon}</div>
+                            <div className="text-primary group-hover:scale-125 group-hover:rotate-6 transition-transform">
+                              {item.icon}
+                            </div>
                             <div>{item.text}</div>
-                          </div>
+                          </motion.div>
                         );
                       })}
                     </div>
@@ -329,7 +339,7 @@ const About = () => {
                 </TabsContent>
               </div>
             </Tabs>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

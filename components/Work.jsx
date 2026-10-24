@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 
 import ProjectCard from "./ProjectCard";
+import { Reveal, Parallax, Magnetic } from "./animations/Motion";
 import { fetchProjects } from "@/lib/getProjects";
 
 const Work = () => {
@@ -24,22 +25,28 @@ const Work = () => {
   }, []);
 
   return (
-    <section className="relative mb-12 xl:mb-48">
+    <section className="relative isolate mb-12 xl:mb-48">
+      {/* decorative parallax glow */}
+      <Parallax speed={-0.4} className="pointer-events-none absolute -z-10 -top-20 left-0 hidden xl:block">
+        <div className="w-[380px] h-[380px] rounded-full bg-primary/10 blur-3xl" />
+      </Parallax>
       <div className="container mx-auto">
 
         {/* text */}
-        <div className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
+        <Reveal direction="right" className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
           <h2 className="section-title mb-4"> My Latest Projects</h2>
           <p className="subtitle mb-8">
             Step into the code I've built and brought to life.
           </p>
-          <Link href="/projects">
-            <Button>All Projects</Button>
-          </Link>
-        </div>
+          <Magnetic>
+            <Link href="/projects">
+              <Button>All Projects</Button>
+            </Link>
+          </Magnetic>
+        </Reveal>
 
         {/* slider */}
-        <div className="xl:max-w-[1000px] xl:absolute right-0 top-0">
+        <Reveal delay={0.2} className="xl:max-w-[1000px] xl:absolute right-0 top-0">
 <Swiper
   loop={true}
   className="h-[480px]"
@@ -64,7 +71,7 @@ const Work = () => {
     </SwiperSlide>
   ))}
 </Swiper>
-        </div>
+        </Reveal>
 
       </div>
     </section>
