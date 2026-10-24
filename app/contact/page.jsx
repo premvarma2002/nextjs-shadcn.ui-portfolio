@@ -35,8 +35,7 @@ const Contact = () => {
             <div className="flex items-center gap-x-8">
               <HomeIcon size={18} className="text-primary" />
               <div>
-                Warur Road, Near Talathi office , Tehsil rajura , Dist
-                chandrapur
+                Plot No. 2, Gawande Layout, Near Bike Parking, Nagpur
               </div>
             </div>
             {/* phone  */}

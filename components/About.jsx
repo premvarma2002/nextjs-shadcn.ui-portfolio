@@ -41,7 +41,7 @@ const infoData = [
   },
   {
     icon: <HomeIcon size={20} />,
-    text: " Rajura ,Maharashtra , India ",
+    text: "Nagpur, Maharashtra, India",
   },
 ];
 
